@@ -1,2 +1,62 @@
-# mask-detection-project
-Mask detection project using TensorFlow
+# 😷 CNN 기반 마스크 착용 여부 분류 및 하이퍼파라미터 성능 비교
+
+## 프로젝트 소개
+CNN(합성곱 신경망)을 활용하여 얼굴 이미지의 마스크 착용 여부를 분류하는 모델을 구현하였습니다.
+
+단순 분류 모델 구현에 그치지 않고, 동일 데이터셋 환경에서 CNN 주요 하이퍼파라미터를 변경하며 성능 차이를 비교·분석하는 실험을 진행했습니다.
+
+## 프로젝트 목표
+- 얼굴 이미지 기반 마스크 착용 여부 자동 분류
+- CNN 구조 이해 및 학습
+- 주요 하이퍼파라미터 변화에 따른 성능 비교
+- 최적 파라미터 탐색 및 결과 분석
+
+## 사용 기술
+- Python
+- TensorFlow / Keras
+- CNN
+- NumPy
+- Matplotlib
+
+## 데이터 전처리
+- with_mask / without_mask 두 개 클래스로 구성
+- ImageDataGenerator를 활용한 이미지 정규화 및 데이터 분할
+- 학습 데이터 / 검증 데이터 분리
+
+## 모델 구성
+- Convolution Layer
+- Pooling Layer
+- Dense Layer
+- Binary Classification
+
+## 실험 내용
+
+### 1. 필터(Filter) 개수 비교
+32 / 64 / 128 필터 개수를 적용하여 성능 비교
+
+결과:
+- 필터 수 증가가 항상 성능 향상으로 이어지지 않음을 확인
+- 과적합과 연산량 증가에 따라 성능 차이 발생
+
+### 2. 커널(Kernel Size) 비교
+3x3 / 5x5 / 7x7 크기 비교
+
+결과:
+- 커널 크기가 크다고 반드시 높은 성능이 나오는 것은 아님
+- 데이터 특성에 적합한 크기 선택 중요
+
+### 3. Stride 비교
+Stride 값 변화에 따른 정확도 차이 분석
+
+### 4. Padding 비교
+same / valid padding 적용 후 성능 비교
+
+## 프로젝트 결과
+- CNN 기본 구조와 학습 과정 이해
+- 하이퍼파라미터 변화가 모델 성능에 미치는 영향 분석
+- 그래프 기반 성능 비교 경험 습득
+
+## 개선점
+- 데이터셋 다양화
+- Epoch 증가 및 모델 구조 개선
+- 데이터 증강(Data Augmentation) 추가
